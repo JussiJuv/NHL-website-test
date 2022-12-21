@@ -1,0 +1,152 @@
+.topnav {
+    background-color: rgb(27, 27, 27);
+    overflow: hidden;
+    width: auto;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.topnav a {
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 20px 20px;
+    text-decoration: none;
+    font-size: 24px;
+}
+
+.topnav a.active {
+    background-color: #ddd;
+    color: black;
+}
+
+.topnav a.active {
+    background-color: #163972e1;
+    color: white;
+}
+
+p {
+    color:blue;
+    background:grey;
+    font-style:italic;
+}
+
+
+/*.center-screen {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+} */
+
+#tdGameTable {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-collapse:separate;
+    width: 550px;
+    font-size: 20px;
+    /*margin-top: 20px;*/
+    margin: auto;
+}
+
+#ydGameTable {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-collapse:separate;
+    width: 550px;
+    font-size: 20px;
+    margin: auto;
+}
+
+
+/*#dynGameTable {
+    text-align: center;
+    border-collapse: collapse;
+    width: 550px;
+    font-size: 20px;
+    margin-top: 20px;
+} */
+
+tr:nth-child(odd) {
+    background-color: #565869;
+    color: rgb(57, 136, 240);
+}
+
+tr:nth-child(even) {
+    background-color: #3f4047;
+    color: rgb(57, 136, 240);
+}
+
+td {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+
+h2 {
+    margin:auto;
+    text-align: center;
+    padding-top: 30px;
+    color: white;
+}
+
+#NHL {
+    width: 50px;
+    position: absolute;
+    top: 5px;
+    left: 10px;
+    margin: auto;
+    background-repeat: no-repeat;
+    opacity: 100%;
+}
+
+/*img {
+    width: 50px;
+    position: absolute;
+    top: 5px;
+    left: 10px;
+    margin: auto;
+    background-repeat: no-repeat;
+    opacity: 100%;
+} */
+
+body {
+    /*background-color: rgb(224, 235, 240);*/
+    background-color: rgb(39, 42, 44);
+    margin:auto;
+}
+
+/* .header {
+    vertical-align: top;
+    width: 940px;
+    text-align: center;
+    background: rgb(255, 255, 255);
+    background: rgba(233, 230, 70, 0.63);
+    height: 100px;
+    border: 10px solid black;
+    font-size: 30px;
+    border-radius: 10px;
+    opacity: 0.9;
+}
+
+a {
+    text-align: center;
+    margin-bottom: 50px;
+} */
+
+
+/* body {
+    width: 960px;    
+    margin: auto;    
+    background: url("https://picsum.photos/1920/1080/?random");    
+    opacity: 100%;    background-repeat: no-repeat;    
+    background-position:center;    background-size: cover;    
+    background-attachment: fixed;    
+    opacity: 0.9;    
+} */

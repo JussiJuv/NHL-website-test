@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./standings.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div class="topnav">
+        <a href="index.html">Home</a>
+        <a class="active" href="standingsLeague.html">Standings</a>
+    </div>
+
+    <div class="standNav">
+        <a href="standingsLeague.html">League</a>
+        <a href="standingsConference.html">Conference</a>
+        <a class="active" href="standingsDivision.html">Division</a>
+    </div>
+
+    <img src="https://upload.wikimedia.org/wikipedia/en/3/3a/05_NHL_Shield.svg" alt="">
+
+    <div class="grid-container">
+        <div class="center-screen">
+            <h2>Eastern</h2>
+            <h3>Metropolitan</h3>
+            <table class="standTable" id="metTable"></table>
+            <h3>Atlantic</h3>
+            <table class="standTable" id="atlTable"></table>
+        </div>
+    
+        <div class="center-screen">
+            <h2>Western</h2>
+            <h3>Central</h3>
+            <table class="standTable" id="cenTable"></table>
+            <h3>Pacific</h3>
+            <table class="standTable" id="pacTable"></table>
+        </div>
+    </div>
+
+
+    <script src="teamStats.js"></script>
+    <script src="game.js"></script>
+    <script src="team.js"></script>
+    <script src="standingsDivision.js"></script>
+</body>
+</html>
