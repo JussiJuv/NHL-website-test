@@ -1,0 +1,13 @@
+https://github.com/dword4/nhlapi
+
+Teams:
+https://statsapi.web.nhl.com/api/v1/teams
+
+Roster for specific team:
+https://statsapi.web.nhl.com/api/v1/teams/7/roster
+
+Single players stats for a single season:
+https://statsapi.web.nhl.com/api/v1/people/8480035/stats?stats=statsSingleSeason&season=20222023
+
+Standings:
+https://statsapi.web.nhl.com/api/v1/standings

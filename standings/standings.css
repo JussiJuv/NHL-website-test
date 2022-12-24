@@ -92,12 +92,12 @@ h3 {
 
 tr:nth-child(odd) {
     background-color: #565869;;
-    color: rgb(57, 136, 240);
+    color: white;
 }
 
 tr:nth-child(even) {
     background-color: #3f4047;
-    color: rgb(57, 136, 240);;
+    color: white;
 }
 
 

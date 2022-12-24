@@ -17,14 +17,64 @@
 
     <img id="NHL" src="https://upload.wikimedia.org/wikipedia/en/3/3a/05_NHL_Shield.svg" alt="">
 
+    <h1>Top 10 stats for skaters</h1>
     <div class="center-screen">
-        <table class="pointsTableCl" id="pointsTableId"></table>
+        <div>
+            <h2>Points</h2>
+            <table class="statTable" id="pointsTableId">
+                <colgroup></colgroup>
+                <tr>
+                    <th>Rank</th>
+                    <th>Name</th>
+                    <th>Goals</th>
+                    <th>Assists</th>
+                    <th class="sortedBy">Points</th>
+                </tr>
+            </table>
+        </div>
+        <div>
+            <h2>Goals</h2>
+            <table class="statTable" id="goalsTableId">
+                <tr>
+                    <th>Rank</th>
+                    <th>Name</th>
+                    <th class="sortedBy">Goals</th>
+                    <th>Assists</th>
+                    <th >Points</th>
+                </tr>
+            </table>
+        </div>
+        <div>
+            <h2>Assists</h2>
+            <table class="statTable" id="assistsTableId">
+                <tr>
+                    <th>Rank</th>
+                    <th>Name</th>
+                    <th>Goals</th>
+                    <th class="sortedBy">Assists</th>
+                    <th>Points</th>
+                </tr>
+            </table>
+        </div>
+        <table></table>
+    </div>
+
+    <div class="center-screen">
+        <table class="statTable" id="GoalsAgainstAVG">
+            <tr>
+                <th>Rank</th>
+                <th>Name</th>
+                <th>Games</th>
+                <th class="sortedBy">Goals Against Average</th>
+            </tr>
+        </table>
     </div>
 
     <script src="/Stats/player.js"></script>  
     <script src="/game.js"></script>
     <script src="/standings/team.js"></script>
     <script src="/Stats/playerStats.js"></script>
+    <script src="/Stats/goalieStats.js"></script>
     <script src="/Stats/statsPage.js"></script>
 </body>
 </html>

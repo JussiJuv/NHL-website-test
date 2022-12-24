@@ -29,19 +29,6 @@
     color: white;
 }
 
-p {
-    color:blue;
-    background:grey;
-    font-style:italic;
-}
-
-
-/*.center-screen {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-} */
 
 #tdGameTable {
     justify-content: center;
@@ -50,7 +37,6 @@ p {
     border-collapse:separate;
     width: 550px;
     font-size: 20px;
-    /*margin-top: 20px;*/
     margin: auto;
 }
 
@@ -66,12 +52,12 @@ p {
 
 tr:nth-child(odd) {
     background-color: #565869;
-    color: rgb(57, 136, 240);
+    color: white;
 }
 
 tr:nth-child(even) {
     background-color: #3f4047;
-    color: rgb(57, 136, 240);
+    color: white;
 }
 
 td {
@@ -87,6 +73,7 @@ h2 {
     color: white;
 }
 
+
 #NHL {
     width: 50px;
     position: absolute;
@@ -99,7 +86,6 @@ h2 {
 
 
 body {
-    /*background-color: rgb(224, 235, 240);*/
     background-color: rgb(39, 42, 44);
     margin:auto;
 }
