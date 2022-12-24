@@ -62,8 +62,6 @@ $.getJSON('https://statsapi.web.nhl.com/api/v1/standings/byDivision', function(s
             }
         }
     }
-    console.log(metTable);
-    console.log(metMap);
     addToTable(metTable, metMap);
     addToTable(atlTable, atlMap);
     addToTable(cenTable, cenMap);

@@ -1,6 +1,6 @@
 /* https://statsapi.web.nhl.com/api/v1/standings/byConference */
 
-let sTable = document.getElementById("eastTable");
+let eTable = document.getElementById("eastTable");
 let wTable = document.getElementById("westTable");
 
 let teamMap = new Map(); 
@@ -29,40 +29,34 @@ $.getJSON('https://statsapi.web.nhl.com/api/v1/standings/byConference', function
     let teamRAmount = Object.keys(sData.records[1].teamRecords).length;
     console.log(teamRAmount);
 
-    for(let j=0; j < teamRAmount; j++) {
-        let id = JSON.parse(sData.records[0].teamRecords[j].team.id);
-        let losses = JSON.parse(sData.records[0].teamRecords[j].leagueRecord.losses);
-        let ot = JSON.parse(sData.records[0].teamRecords[j].leagueRecord.ot);
-        let wins = JSON.parse(sData.records[0].teamRecords[j].leagueRecord.wins);
-        let points = JSON.parse(sData.records[0].teamRecords[j].points);
-        let divRank = JSON.parse(sData.records[0].teamRecords[j].divisionRank);
-        let confRank = JSON.parse(sData.records[0].teamRecords[j].conferenceRank);
-        let leagRank = JSON.parse(sData.records[0].teamRecords[j].leagueRank);
-        let gamesPlayed = JSON.parse(sData.records[0].teamRecords[j].gamesPlayed);
-
-        const teamStats = new TeamStats(id, losses, ot, wins, points, divRank, confRank,
-             leagRank, gamesPlayed);
-        teamStatsMapEast.set(id, teamStats);
+    for (let i = 0; i < 2; i++) {
+        for(let j=0; j < teamRAmount; j++) {
+            let id = JSON.parse(sData.records[i].teamRecords[j].team.id);
+            let losses = JSON.parse(sData.records[i].teamRecords[j].leagueRecord.losses);
+            let ot = JSON.parse(sData.records[i].teamRecords[j].leagueRecord.ot);
+            let wins = JSON.parse(sData.records[i].teamRecords[j].leagueRecord.wins);
+            let points = JSON.parse(sData.records[i].teamRecords[j].points);
+            let divRank = JSON.parse(sData.records[i].teamRecords[j].divisionRank);
+            let confRank = JSON.parse(sData.records[i].teamRecords[j].conferenceRank);
+            let leagRank = JSON.parse(sData.records[i].teamRecords[j].leagueRank);
+            let gamesPlayed = JSON.parse(sData.records[i].teamRecords[j].gamesPlayed);
+    
+            const teamStats = new TeamStats(id, losses, ot, wins, points, divRank, confRank,
+                 leagRank, gamesPlayed);
+            
+            if (i == 0) {
+                teamStatsMapEast.set(id, teamStats);
+            } else if (i == 1) {
+                teamStatsMapWest.set(id, teamStats);
+            }
+        }
     }
+    addToTable(eTable, teamStatsMapEast);
+    addToTable(wTable, teamStatsMapWest);
+});
 
-    for (let k=0; k < teamRAmount; k++) {
-        let id = JSON.parse(sData.records[1].teamRecords[k].team.id);
-        let losses = JSON.parse(sData.records[1].teamRecords[k].leagueRecord.losses);
-        let ot = JSON.parse(sData.records[1].teamRecords[k].leagueRecord.ot);
-        let wins = JSON.parse(sData.records[1].teamRecords[k].leagueRecord.wins);
-        let points = JSON.parse(sData.records[1].teamRecords[k].points);
-        let divRank = JSON.parse(sData.records[1].teamRecords[k].divisionRank);
-        let confRank = JSON.parse(sData.records[1].teamRecords[k].conferenceRank);
-        let leagRank = JSON.parse(sData.records[1].teamRecords[k].leagueRank);
-        let gamesPlayed = JSON.parse(sData.records[1].teamRecords[k].gamesPlayed);
-
-        const teamStats = new TeamStats(id, losses, ot, wins, points, divRank, confRank,
-             leagRank, gamesPlayed);
-        teamStatsMapWest.set(id, teamStats);
-
-    }
-
-    let row = sTable.insertRow(-1);
+function addToTable(table, tMap) {
+    let row = table.insertRow(-1);
     let cell1 = row.insertCell(0);
     let cell2 = row.insertCell(1);
     let cell3 = row.insertCell(2);
@@ -77,11 +71,12 @@ $.getJSON('https://statsapi.web.nhl.com/api/v1/standings/byConference', function
     cell5.innerHTML = "OT";
     cell6.innerHTML = "P";
 
-    teamStatsMapEast.forEach((item) => {
+    tMap.forEach((item) => {
         let key = item.id;
         let name = teamMap.get(key).name;
+        //console.log("Key " + key + " name " + name);
 
-        let row = sTable.insertRow(-1);
+        let row = table.insertRow(-1);
         let cell1 = row.insertCell(0);
         let cell2 = row.insertCell(1);
         let cell3 = row.insertCell(2);
@@ -96,42 +91,4 @@ $.getJSON('https://statsapi.web.nhl.com/api/v1/standings/byConference', function
         cell5.innerHTML = item.ot;
         cell6.innerHTML = item.points;
     })
-
-
-
-    let wRow = wTable.insertRow(-1);
-    let wcell1 = wRow.insertCell(0);
-    let wcell2 = wRow.insertCell(1);
-    let wcell3 = wRow.insertCell(2);
-    let wcell4 = wRow.insertCell(3);
-    let wcell5 = wRow.insertCell(4);
-    let wcell6 = wRow.insertCell(5);
-
-    wcell1.innerHTML = "Name";
-    wcell2.innerHTML = "GP";
-    wcell3.innerHTML = "W";
-    wcell4.innerHTML = "L";
-    wcell5.innerHTML = "OT";
-    wcell6.innerHTML = "P";
-
-    teamStatsMapWest.forEach((item) => {
-        let key = item.id;
-        let name = teamMap.get(key).name;
-
-        let wRow = wTable.insertRow(-1);
-        let wcell1 = wRow.insertCell(0);
-        let wcell2 = wRow.insertCell(1);
-        let wcell3 = wRow.insertCell(2);
-        let wcell4 = wRow.insertCell(3);
-        let wcell5 = wRow.insertCell(4);
-        let wcell6 = wRow.insertCell(5);
-
-        wcell1.innerHTML = name;
-        wcell2.innerHTML = item.gamesPlayed;
-        wcell3.innerHTML = item.wins;
-        wcell4.innerHTML = item.losses;
-        wcell5.innerHTML = item.ot;
-        wcell6.innerHTML = item.points;
-    })
-
-});
+}
