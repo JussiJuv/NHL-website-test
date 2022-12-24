@@ -1,0 +1,4 @@
+1. add top 10 list for goals/assists on stats page.
+2. new page from stats page to see every player in statsArray
+3. css styles for ^lists
+4. Goalie stats?
